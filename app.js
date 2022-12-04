@@ -11,4 +11,9 @@ app.listen(3000, () => {
 
 app.get('/contact', (req, res) => {
     res.send('<h1>Contact page</h1>');
+});
+  
+app.use((req, res, next) => {
+    console.log('Наше промежуточное ПО');
+    next();
   });
